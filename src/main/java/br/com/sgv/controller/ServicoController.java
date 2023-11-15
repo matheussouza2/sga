@@ -28,20 +28,20 @@ public class ServicoController {
     @GetMapping("/servicos/novo")
     public String novo(Model model) {
         model.addAttribute("servico", new Servico());
-        return "editar_servicos";
+        return "editar_servico";
     }
 
     @GetMapping("/servicos/{id}")
     public String editar(@PathVariable("id") long id, Model model) {
         Optional<Servico> servico = servicoRepository.findById(id);
         model.addAttribute("servico", servico.get());
-        return "editar_servicos";
+        return "editar_servico";
     }
 
     @PostMapping("/servicos")
     public String salvar(@Valid Servico servico, BindingResult result) {
         if (result.hasErrors()) {
-            return "editar_servicos";
+            return "editar_servico";
         }
         servicoRepository.save(servico);
         return "redirect:/servicos";

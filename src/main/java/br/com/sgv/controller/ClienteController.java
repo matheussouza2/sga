@@ -22,7 +22,7 @@ public class ClienteController {
     @GetMapping("/clientes")
     public String listar(Model model) {
         model.addAttribute("listaClientes", clienteRepository.findAll());
-        return "gerenciar_clientes";
+        return "gerenciar_cliente";
     }
 
     @GetMapping("/clientes/novo")
@@ -35,13 +35,13 @@ public class ClienteController {
     public String editar(@PathVariable("id") long id, Model model) {
         Optional<Cliente> cliente = clienteRepository.findById(id);
         model.addAttribute("cliente", cliente.get());
-        return "editar_clientes";
+        return "editar_cliente";
     }
 
     @PostMapping("/clientes")
     public String salvar(@Valid Cliente cliente, BindingResult result) {
         if (result.hasErrors()) {
-            return "editar_clientes";
+            return "editar_cliente";
         }
         clienteRepository.save(cliente);
         return "redirect:/clientes";

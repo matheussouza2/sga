@@ -28,14 +28,14 @@ public class BarbeiroController {
     @GetMapping("/barbeiros/novo")
     public String novo(Model model) {
         model.addAttribute("barbeiro", new Barbeiro());
-        return "editar_barbeiros";
+        return "editar_barbeiro";
     }
 
     @GetMapping("/barbeiros/{id}")
     public String editar(@PathVariable("id") long id, Model model) {
         Optional<Barbeiro> barbeiro = barbeiroRepository.findById(id);
         model.addAttribute("barbeiro", barbeiro.get());
-        return "editar_barbeiros";
+        return "editar_barbeiro";
     }
 
     @PostMapping("/barbeiros")

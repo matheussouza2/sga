@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,11 +17,11 @@ public class Agendamento {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @OneToMany
+    @OneToOne
     private Servico servico;
-    @OneToMany
+    @OneToOne
     private Cliente cliente;
-    @OneToMany
+    @OneToOne
     private Barbeiro barbeiro;
     @Override
     public String toString(){
