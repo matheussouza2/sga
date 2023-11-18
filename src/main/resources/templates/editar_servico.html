@@ -18,10 +18,10 @@
                 <hr class="mb-4">
                 <div class="row">
                     <div class="col-md-12 mb-3">
-                        <label for="servico">Serviço: </label>
-                        <input type="text" minlength="1" th:field="*{servico}" id="servico" placeholder="Tipo de serviço" class="form-control">
+                        <label for="descricao">Descrição do serviço: </label>
+                        <input type="text" minlength="1" th:field="*{descricao}" id="descricao" placeholder="Tipo de serviço" class="form-control">
                     </div>    
-                    <span th:if="${#fields.hasErrors('servico')}" th:errors="*{servico}" class="alert alert-warning"></span>                        
+                    <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="alert alert-warning"></span>                        
                 </div>
                 <div class="row">
                     <div class="col-md-12 mb-3">

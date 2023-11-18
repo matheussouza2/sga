@@ -33,7 +33,7 @@
                 <tbody>
                     <tr th:each="p : ${listaServicos}">
                         <td th:text="${p.id}"></td>
-                        <td th:text="${p.servico}"></td>
+                        <td th:text="${p.descricao}"></td>
                         <td th:text="${p.valor}"></td>
                         <td><a th:href="@{/servicos/{id}(id=${p.id})}" class="btn btn-warning"><i class="bi bi-pencil"></i></a></td>
                         <td>

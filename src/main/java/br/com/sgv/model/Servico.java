@@ -17,11 +17,10 @@ public class Servico {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @Size(min=1,message = "Declare o tipo de servico.")
-    private String servico;
-    @Size(min=1,message = "Declare o valor do servico.")
+    private String descricao;
     private float valor;
     @Override
     public String toString(){
-        return "Servico: " + servico + ' ' + "Valor: " + valor;
+        return "Servico: " + descricao + ' ' + "Valor: " + valor;
     }
 }
